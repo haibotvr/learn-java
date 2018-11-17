@@ -1,14 +1,20 @@
 package com.simon.learn.headfirstjava.fire;
 
+import java.util.ArrayList;
+
 public class SimpleDotComTestDrive {
 
     public static void main(String[] args) {
 
         SimpleDotCom dotCom = new SimpleDotCom();
 
-        int[] locations = {2, 3, 4};
+        ArrayList<String> list = new ArrayList<>();
 
-        dotCom.setLocationCells(locations);
+        list.add(1 + "");
+        list.add(2 + "");
+        list.add(3 + "");
+
+        dotCom.setLocationCells(list);
 
         String userGuess = "3";
 

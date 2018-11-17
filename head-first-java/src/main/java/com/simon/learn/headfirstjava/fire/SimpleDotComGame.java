@@ -1,6 +1,6 @@
 package com.simon.learn.headfirstjava.fire;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class SimpleDotComGame {
 
@@ -12,7 +12,11 @@ public class SimpleDotComGame {
         int startLocation = (int)(Math.random() * 5);
         GameHelper helper = new GameHelper();
         SimpleDotCom dot = new SimpleDotCom();
-        dot.setLocationCells(new int[]{startLocation, startLocation + 1, startLocation + 2});
+        ArrayList<String> list = new ArrayList<>();
+        list.add(startLocation + "");
+        list.add(startLocation + 1 + "");
+        list.add(startLocation + 2 + "");
+        dot.setLocationCells(list);
         //while the dot com it still alive
         boolean alive = true;
         while (alive){

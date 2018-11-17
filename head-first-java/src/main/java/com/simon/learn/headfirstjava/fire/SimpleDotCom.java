@@ -1,8 +1,10 @@
 package com.simon.learn.headfirstjava.fire;
 
+import java.util.ArrayList;
+
 public class SimpleDotCom {
 
-    private int[] locationCells;
+    private ArrayList<String> locationCells;
 
     private int numOfHits = 0;
 
@@ -24,30 +26,37 @@ public class SimpleDotCom {
 
     public String checkYourself(String userGuess){
 
-        int guess = Integer.valueOf(userGuess).intValue();
+//        int guess = Integer.valueOf(userGuess).intValue();
+
+        int index = locationCells.indexOf(userGuess);
 
         String result = "miss";
 
-        for (int locationCell : locationCells) {
+//        for (int locationCell : locationCells) {
 
-            if(locationCell == guess){
-                result = "hit";
-                numOfHits++;
-                break;
-            }
-
+//            if(locationCell == guess){
+        if(index >= 0){
+            locationCells.remove(userGuess);
+            result = "hit";
+            numOfHits++;
         }
+//                break;
+//            }
 
-        if(numOfHits >= locationCells.length){
+//        }
+
+//        if(numOfHits >= locationCells.length){
+        if(locationCells.isEmpty()){
             result = "kill";
         }
+//        }
 
         System.out.println(result);
 
         return result;
     }
 
-    public void setLocationCells(int[] locationCells) {
+    public void setLocationCells(ArrayList<String> locationCells) {
         this.locationCells = locationCells;
     }
 }
