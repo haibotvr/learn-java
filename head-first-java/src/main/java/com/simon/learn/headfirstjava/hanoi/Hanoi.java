@@ -2,7 +2,9 @@ package com.simon.learn.headfirstjava.hanoi;
 
 public class Hanoi {
 
-    private int number = 0;
+    private int number;
+
+
 
     /**
      *
@@ -28,7 +30,7 @@ public class Hanoi {
 
     public static void main(String[] args) {
         Hanoi hanoi = new Hanoi();
-        hanoi.hanoi(1, 'A', 'B', 'C');
+        hanoi.hanoi(3, 'A', 'B', 'C');
     }
 
 
