@@ -17,8 +17,8 @@ public class Hanoi {
         if(n == 1){
             move(n, origin, destination);
         }else{
-            hanoi(n - 1, origin, destination, assist);
             move(n - 1, origin, destination);
+            hanoi(n - 1, origin, destination, assist);
             hanoi(n - 1, assist, origin, destination);
         }
     }
