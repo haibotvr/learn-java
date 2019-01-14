@@ -36,4 +36,5 @@ public class DoubleCheckSingleton {
         }
         return singleton;
     }
+
 }
