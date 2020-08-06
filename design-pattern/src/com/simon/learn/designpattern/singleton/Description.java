@@ -1,0 +1,1 @@
+package com.simon.learn.designpattern.singleton;/** * 单例模式描述 * * @author simon.wei */public class Description {    /**     * 单例类只能有一个实例     * 单例类必须自己创建自己的唯一实例     * 单例类必须给所有其他对象提供这一实例     */}
