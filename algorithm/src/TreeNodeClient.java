@@ -1,7 +1,14 @@
 /**
  * @author simon.wei
  */
-public class TreeNodeTest {
+public class TreeNodeClient {
+
+    /**
+     * 遍历二叉树结构
+     * 1、前序
+     * 2、中序
+     * 3、后序
+     */
 
     public static void main(String[] args) {
         TreeNode a = new TreeNode("A");

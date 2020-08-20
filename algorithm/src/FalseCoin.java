@@ -20,7 +20,7 @@ public class FalseCoin {
                 return result;
             }
         }
-        ////偶数个
+        //偶数个
         if((high - low + 1) % 2 == 0){
             for(i = low; i <= low + (high - low) / 2; i++){
                 sum1 = sum1 + coin[i];
