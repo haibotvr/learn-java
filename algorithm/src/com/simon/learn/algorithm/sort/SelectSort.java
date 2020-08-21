@@ -23,6 +23,7 @@ public class SelectSort {
                     index = j;
                 }
             }
+            //将最小元素放入已排区间末尾
             if(index != i){
                 temp = arr[i];
                 arr[i] = arr[index];
