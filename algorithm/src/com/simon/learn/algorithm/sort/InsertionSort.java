@@ -13,6 +13,14 @@ public class InsertionSort {
 
     /**
      * 插入排序
+     *
+     * 插入排序也包含两种操作，一种是元素的比较，一种是元素的移动。
+     * 当我们需要将一个数据 a 插入到已排序区间时，
+     * 需要拿 a 与已排序区间的元素依次比较大小，
+     * 找到合适的插入位置。
+     * 找到插入点之后，我们还需要将插入点之后的元素顺序往后移动一位，
+     * 这样才能腾出位置给元素 a 插入。
+     *
      * @param arr 待排序数组
      */
     public static void insertionSort(int[] arr) {
@@ -27,28 +35,17 @@ public class InsertionSort {
                 if(arr[j] > value) {
                     arr[j + 1] = arr[j];
                     System.out.println("第[" + i + "," + j + "]次排序");
-                    log(arr);
+                    ArrayUtil.log(arr);
                     continue;
                 }
                 System.out.println("第[" + i + "," + j + "]次排序");
-                log(arr);
+                ArrayUtil.log(arr);
                 break;
             }
             arr[j+1] = value;
             System.out.println("第[" + i + "]次排序结果");
-            log(arr);
+            ArrayUtil.log(arr);
         }
 
-    }
-
-    public static void log(int[] arr) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < arr.length; i++) {
-            builder.append(arr[i]);
-            if(i != arr.length - 1) {
-                builder.append(",");
-            }
-        }
-        System.out.println(builder.toString());
     }
 }
