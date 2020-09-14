@@ -2,7 +2,6 @@ package com.simon.learn;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  * @author simon.wei
