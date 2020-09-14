@@ -5,6 +5,10 @@ package com.simon.learn.designpattern.factory;
  */
 public class Client {
 
+    /**
+     * 抽象工厂：工厂的工厂
+     */
+
     public static void main(String[] args) {
 
         //创建装机工程师对象
