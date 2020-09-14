@@ -24,10 +24,7 @@ public class ShellSort {
             }
             x++;
             System.out.println("第" + x + "步排序结果:");
-            for(int h = 0; h < arr.length; h++){
-                System.out.print(" " + arr[h]);
-            }
-            System.out.println("\n");
+            ArrayUtil.log(arr);
         }
     }
 
