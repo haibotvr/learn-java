@@ -22,7 +22,12 @@ public class LazyHolderClassSingleton {
      *   4）线程可以看见它将要处理的对象时
      */
 
-    private LazyHolderClassSingleton(){}
+    private LazyHolderClassSingleton(){
+        //防止被反射破坏
+        if(SingletonHolder.instance != null) {
+            throw new RuntimeException("不允许非法访问");
+        }
+    }
 
     /**
      * 类级的内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例没有绑定关系，而且只有被调用到时才会装载，从而实现了延迟加载。

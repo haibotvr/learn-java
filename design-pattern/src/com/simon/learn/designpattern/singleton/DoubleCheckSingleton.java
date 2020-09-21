@@ -20,7 +20,7 @@ public class DoubleCheckSingleton {
     private DoubleCheckSingleton(){}
 
     public static DoubleCheckSingleton getSingleton() {
-        //先检查实例是否存在，如果不存在才进入下面的同步块
+        //先检查实例是否存在，如果不存在才进入下面的同步块（检查是否要阻塞）
         if(singleton == null){
             /**
              * 当多个线程同时进入到这里时，进行排队等待，第一个线程首先创建了实例，然后返回结果。
