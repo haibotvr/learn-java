@@ -38,8 +38,9 @@ public class Client {
 //        Stature iEuropean = (Stature) Proxy.newProxyInstance(european.getClass().getClassLoader(), European.class.getInterfaces(), handlerEuropean);
 //        iEuropean.height();
 
-        $Proxy0 proxy0 = new $Proxy0(handlerAsian);
-        proxy0.color();
+//        $Proxy0 proxy0 = new $Proxy0(handlerAsian);
+//        proxy0.color();
+
 
 
     }
