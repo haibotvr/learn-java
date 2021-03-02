@@ -9,6 +9,8 @@ public class Node {
 
     private Node next;
 
+    private Node random;
+
     public Node(Object data) {
         this.data = data;
     }
@@ -16,6 +18,12 @@ public class Node {
     public Node(Object data, Node next) {
         this.data = data;
         this.next = next;
+    }
+
+    public Node(Object data, Node next, Node random) {
+        this.data = data;
+        this.next = next;
+        this.random = random;
     }
 
     public Object getData() {
@@ -32,5 +40,13 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public Node getRandom() {
+        return random;
+    }
+
+    public void setRandom(Node random) {
+        this.random = random;
     }
 }
