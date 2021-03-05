@@ -21,7 +21,9 @@ public class InsertionSort {
      * 找到插入点之后，我们还需要将插入点之后的元素顺序往后移动一位，
      * 这样才能腾出位置给元素 a 插入。
      *
-     * @param arr 待排序数组
+     * 时间复杂度O(n2)
+     * 是稳定排序
+     * 是原地排序
      */
     public static void insertionSort(int[] arr) {
         int n = arr.length;

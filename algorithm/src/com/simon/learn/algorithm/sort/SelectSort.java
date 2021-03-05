@@ -3,14 +3,16 @@ package com.simon.learn.algorithm.sort;
 /**
  * @author simon.wei
  */
-public class SelectSort {
+public class  SelectSort {
 
     /**
      * 选择排序
      * 选择排序算法的实现思路有点类似插入排序，也分已排序区间和未排序区间。
      * 但是选择排序每次会从未排序区间中找到最小的元素，将其放到已排序区间的末尾。
      *
-     * @param arr 待排序数组
+     * 时间复杂度O(n2)
+     * 不是稳定排序
+     * 是原地排序
      */
     public static void selectSort(int[] arr){
         int index;
