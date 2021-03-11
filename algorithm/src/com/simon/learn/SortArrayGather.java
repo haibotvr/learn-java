@@ -32,15 +32,26 @@ public class SortArrayGather {
         System.out.println(time_insert_end - time_insert_start);
 
 
-        long time_select_start = System.currentTimeMillis();
+        long time_quick_start = System.currentTimeMillis();
         for (int k = 0; k < 10; k++) {
             for (int i = 0; i < array.length; i++) {
                 array[i] = random.nextInt(1000);
             }
-            selectSort(array);
+            quickSort(array);
         }
-        long time_select_end = System.currentTimeMillis();
-        System.out.println(time_select_end - time_select_start);
+        long time_quick_end = System.currentTimeMillis();
+        System.out.println(time_quick_end - time_quick_start);
+
+        long time_merge_start = System.currentTimeMillis();
+        for (int k = 0; k < 10; k++) {
+            for (int i = 0; i < array.length; i++) {
+                array[i] = random.nextInt(1000);
+            }
+            mergeSort(array);
+        }
+        long time_merge_end = System.currentTimeMillis();
+        System.out.println(time_merge_end - time_merge_start);
+
 
     }
 
@@ -95,6 +106,73 @@ public class SortArrayGather {
                 array[i] = array[pos];
                 array[pos] = temp;
             }
+        }
+    }
+
+    public static void quickSort(int[] array) {
+        sort(array, 0, array.length - 1);
+    }
+
+    private static void sort(int[] array, int start, int end) {
+        if(start >= end) {
+            return;
+        }
+        int pivot = array[start];
+        int left = start;
+        int right = end;
+        while (left <= right) {
+            while (left <= right && array[left] < pivot) {
+                left++;
+            }
+            while (left <= right && array[right] > pivot) {
+                right--;
+            }
+            if(left <= right) {
+                int temp = array[left];
+                array[left] = array[right];
+                array[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        sort(array, start, right);
+        sort(array, left, end);
+    }
+
+    public static void mergeSort(int[] array) {
+        int[] temp = new int[array.length];
+        mergeSortImpl(array, 0, array.length - 1, temp);
+    }
+
+    private static void mergeSortImpl(int[] array, int start, int end, int[] temp) {
+        if(start >= end) {
+            return;
+        }
+        int mid = (end + start) / 2;
+        mergeSortImpl(array, start, mid, temp);
+        mergeSortImpl(array, mid + 1, end, temp);
+        merge(array, start, mid, end, temp);
+    }
+
+    private static void merge(int[] array, int start, int mid, int end, int[] temp) {
+        int left = start;
+        int right = mid + 1;
+        int index = start;
+        while (left <= mid && right <= end) {
+            if(array[left] < array[right]) {
+                temp[index++] = array[left++];
+            } else {
+                temp[index++] = array[right++];
+            }
+        }
+        while (left <= mid) {
+            temp[index++] = array[left++];
+        }
+        while (right <= end) {
+            temp[index++] = array[right++];
+        }
+        for (index = start; index <= end; index++) {
+            array[index] = temp[index];
         }
     }
 }
