@@ -1,3 +1,5 @@
+import com.simon.learn.TreeNode;
+
 /**
  * @author simon.wei
  */
@@ -25,7 +27,7 @@ public class TreeNodeClient {
         c.left = f;
         c.right = g;
         TreeNodeSolution solution = new TreeNodeSolution();
-        solution.backOrder(a);
+        solution.postOrderNoRecursion2(a);
         solution.list.forEach(obj -> System.out.println(obj));
     }
 }
