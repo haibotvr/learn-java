@@ -37,7 +37,7 @@ public class SortArrayGather {
             for (int i = 0; i < array.length; i++) {
                 array[i] = random.nextInt(1000);
             }
-            quickSort(array);
+            quickSort2(array);
         }
         long time_quick_end = System.currentTimeMillis();
         System.out.println(time_quick_end - time_quick_start);
@@ -111,6 +111,32 @@ public class SortArrayGather {
 
     public static void quickSort(int[] array) {
         sort(array, 0, array.length - 1);
+    }
+
+    public static void quickSort2(int[] array) {
+        sort2(array, 0, array.length - 1);
+    }
+
+    private static void sort2(int[] array, int leftIndex, int rightIndex) {
+        if(leftIndex >= rightIndex) {
+            return;
+        }
+        int pivot = array[leftIndex];
+        int left = leftIndex;
+        int right = rightIndex;
+        while(left < right) {
+            while(left < right && array[right] >= pivot) {
+                right--;
+            }
+            array[left] = array[right];
+            while(left < right && array[left] <= pivot) {
+                left++;
+            }
+            array[right] = array[left];
+        }
+        array[left] = pivot;
+        sort(array, leftIndex, left - 1);
+        sort(array, right + 1, rightIndex);
     }
 
     private static void sort(int[] array, int start, int end) {
