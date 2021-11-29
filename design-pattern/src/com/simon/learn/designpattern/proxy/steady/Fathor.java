@@ -13,8 +13,16 @@ public class Fathor implements IPerson {
 
     @Override
     public void love() {
-        System.out.println("开始物色");
+        before();
         son.love();
+        after();
+    }
+
+    public void before() {
+        System.out.println("开始物色");
+    }
+
+    public void after() {
         System.out.println("开始交往");
     }
 }
